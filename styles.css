@@ -329,4 +329,76 @@ h1, h2, h3, p { margin: 0; }
     justify-content: center;
     margin-bottom: 2rem;
   }
+}/* ============================================================================
+   BRAND MANIFESTO EDITORIAL TYPOGRAPHY RULES
+   ============================================================================ */
+
+.brand-manifesto-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.2rem;
+  max-width: 38rem;
+}
+
+.manifesto-lead-in {
+  font-family: var(--f-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+
+.manifesto-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  padding-left: 0.2rem;
+}
+
+.manifesto-bullet-list li {
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+/* Elegant, minimalist geometric dot marker instead of generic round bullets */
+.manifesto-bullet-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--navy);
+  font-weight: bold;
+}
+
+.manifesto-bullet-list li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.brand-manifesto-container .hero-description-lede {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+
+.manifesto-punchline {
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--navy);
+  border-left: 2px solid var(--line);
+  padding-left: 1rem;
+}
+
+@media (max-width: 980px) {
+  .brand-manifesto-container {
+    text-align: left;
+    margin: 0 auto 2.5rem;
+  }
 }
