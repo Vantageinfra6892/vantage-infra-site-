@@ -293,3 +293,40 @@ h1, h2, h3, p { margin: 0; }
   .service-grid, .finish-grid { grid-template-columns: 1fr; }
   .footer-nav { flex-direction: column; gap: 1.2rem; }
 }
+/* ============================================================================
+   BRAND SYSTEM TRIAD ACCENTS & HERO FINETUNING
+   ============================================================================ */
+
+.brand-triad-pill-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+  padding: 0.4rem 0;
+}
+
+.triad-node {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.triad-divider {
+  font-size: 0.8rem;
+  color: var(--line);
+}
+
+/* Subtle typography weight adjustment to match the elite corporate scale */
+.hero-main-title {
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 980px) {
+  .brand-triad-pill-wrapper {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+}
