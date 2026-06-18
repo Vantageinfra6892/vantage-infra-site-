@@ -249,3 +249,191 @@ h1, h2, h3, p { margin: 0; }
   .main-nav.is-open { transform: translateX(0); }
   .nav-toggle { display: flex; }
 }
+/* ============================================================================
+   PHASE 2 — CINEMATIC HERO LAYER & VISUAL FRAME STYLES
+   ============================================================================ */
+
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  background: var(--cream);
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content-block {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.eyebrow-accent {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 1.2rem;
+}
+
+.hero-main-title {
+  font-family: var(--f-display);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.hero-main-title .italic-serif {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.hero-description-lede {
+  font-family: var(--f-body);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 36rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  font-family: var(--f-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.95rem 1.8rem;
+  letter-spacing: 0.02em;
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: #ffffff;
+  border: 1px solid var(--navy);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn-secondary:hover {
+  background: var(--cream-card);
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
+
+/* Right Side Premium Image Frame */
+.hero-visual-frame {
+  position: relative;
+  width: 100%;
+  height: 580px;
+}
+
+.visual-wrapper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--line);
+  background: var(--cream-card);
+  padding: 1rem; /* Generates a premium museum-style border frame around your art */
+  box-shadow: 0 20px 40px rgba(42, 37, 32, 0.04);
+  position: relative;
+}
+
+.hero-master-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps your custom design proportioned beautifully without stretching */
+  filter: grayscale(15%);
+  transition: filter 0.5s ease;
+}
+
+.visual-wrapper:hover .hero-master-img {
+  filter: grayscale(0%);
+}
+
+/* Subtle architectural scroll line */
+.hero-scroll-anchor {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 50%;
+  background: var(--navy);
+  animation: scroll-drop 2s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-text {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+@keyframes scroll-drop {
+  0% { transform: translateY(-100%); }
+  80% { transform: translateY(200%); }
+  100% { transform: translateY(200%); }
+}
+
+/* Desktop and Tablet Responsive Overrides */
+@media (max-width: 980px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-visual-frame {
+    height: 420px;
+  }
+  .hero-section {
+    padding-top: 6rem;
+  }
+}
